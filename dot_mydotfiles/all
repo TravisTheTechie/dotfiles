@@ -1,4 +1,4 @@
-source ~/.mydotfiles/omz
 source ~/.mydotfiles/aliases
 source ~/.mydotfiles/nvm
+source ~/.mydotfiles/omz
 source ~/.mydotfiles/path
