@@ -1,4 +1,9 @@
-source ~/.mydotfiles/aliases
-source ~/.mydotfiles/nvm
+# omz first
 source ~/.mydotfiles/omz
+
+# tools
+source ~/.mydotfiles/nvm
+
+# my stuff last so it doesn't get overriden
+source ~/.mydotfiles/aliases
 source ~/.mydotfiles/path

@@ -1,2 +1,2 @@
-alias be="bundle exec $*"
-alias ll="ls -laFh $*"
+alias be='bundle exec $*'
+alias ll='ls -laFh $*'
