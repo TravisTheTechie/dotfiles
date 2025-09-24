@@ -5,5 +5,5 @@ if [ -d ~/.local/bin ]; then
   export PATH=~/.local/bin:$PATH
 fi
 if [ -d /opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home ]; then
-  export PATH=$PATH:/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home
+  export PATH=/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/bin:$PATH
 fi
