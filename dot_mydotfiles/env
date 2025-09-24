@@ -1,0 +1,3 @@
+if [ -d "/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home" ]; then
+    export JAVA_HOME="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home"
+fi

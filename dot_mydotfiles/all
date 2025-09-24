@@ -7,3 +7,6 @@ source ~/.mydotfiles/nvm
 # my stuff last so it doesn't get overriden
 source ~/.mydotfiles/aliases
 source ~/.mydotfiles/path
+
+# env
+source ~/.mydotfiles/env
