@@ -10,3 +10,6 @@ source ~/.mydotfiles/path
 
 # env
 source ~/.mydotfiles/env
+
+# starship
+source ~/.mydotfiles/starship
