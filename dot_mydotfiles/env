@@ -1,3 +1,9 @@
 if [ -d "/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home" ]; then
     export JAVA_HOME="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home"
 fi
+
+# less pager settings
+# R: enable color
+# F: quit if fits on one screen
+# X: don't clear on exit
+export LESS="-RFX"
