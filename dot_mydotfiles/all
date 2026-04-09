@@ -13,3 +13,6 @@ source ~/.mydotfiles/env
 
 # starship
 source ~/.mydotfiles/starship
+
+# zellij
+source ~/.mydotfiles/zellij
