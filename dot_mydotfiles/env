@@ -1,5 +1,9 @@
-if [ -d "/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home" ]; then
-    export JAVA_HOME="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home"
+if command -v brew >/dev/null 2>&1; then
+  OPENJDK_PREFIX="$(brew --prefix openjdk 2>/dev/null)"
+  if [ -n "$OPENJDK_PREFIX" ] && [ -d "$OPENJDK_PREFIX/libexec/openjdk.jdk/Contents/Home" ]; then
+    export JAVA_HOME="$OPENJDK_PREFIX/libexec/openjdk.jdk/Contents/Home"
+  fi
+  unset OPENJDK_PREFIX
 fi
 
 # less pager settings

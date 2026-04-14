@@ -3,5 +3,5 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
   ZSH_THEME="robbyrussell"
   plugins=(git)
 
-  source $ZSH/oh-my-zsh.sh
-fi 
+  source "$ZSH/oh-my-zsh.sh"
+fi

@@ -1,22 +1,40 @@
-if [ -d /snap/bin ]; then
-  export PATH=$PATH:/snap/bin
-fi
+path_prepend() {
+  [ -n "${1:-}" ] || return 0
+  [ -d "$1" ] || return 0
 
-if [ -d ~/.local/bin ]; then
-  export PATH=~/.local/bin:$PATH
-fi
+  case ":$PATH:" in
+    *":$1:"*) ;;
+    *) export PATH="$1:$PATH" ;;
+  esac
+}
+
+path_append() {
+  [ -n "${1:-}" ] || return 0
+  [ -d "$1" ] || return 0
+
+  case ":$PATH:" in
+    *":$1:"*) ;;
+    *) export PATH="$PATH:$1" ;;
+  esac
+}
+
+path_append /snap/bin
+path_prepend "$HOME/.local/bin"
+
+# homebrew
+path_prepend /opt/homebrew/bin
 
 # java
-if [ -d /opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home ]; then
-  export PATH=/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/bin:$PATH
+if command -v brew >/dev/null 2>&1; then
+  OPENJDK_PREFIX="$(brew --prefix openjdk 2>/dev/null)"
+  if [ -n "$OPENJDK_PREFIX" ]; then
+    path_prepend "$OPENJDK_PREFIX/libexec/openjdk.jdk/Contents/Home/bin"
+  fi
+  unset OPENJDK_PREFIX
 fi
 
 # rustup
-if [ -d "$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin" ]; then
-  export PATH="$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin:$PATH"
-fi
+path_prepend "$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin"
 
 # rust / cargo
-if [ -d "~/.cargo/bin" ]; then
-    export PATH=$HOME/.cargo/bin:$PATH
-fi
+path_prepend "$HOME/.cargo/bin"

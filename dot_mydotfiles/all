@@ -1,18 +1,23 @@
+source_if_readable() {
+  [ -r "$1" ] && source "$1"
+}
+
 # omz first
-source ~/.mydotfiles/omz
+source_if_readable "$HOME/.mydotfiles/omz"
 
 # tools
-source ~/.mydotfiles/nvm
+source_if_readable "$HOME/.mydotfiles/nvm"
+source_if_readable "$HOME/.mydotfiles/neovim"
 
-# my stuff last so it doesn't get overriden
-source ~/.mydotfiles/aliases
-source ~/.mydotfiles/path
+# my stuff last so it doesn't get overridden
+source_if_readable "$HOME/.mydotfiles/aliases"
+source_if_readable "$HOME/.mydotfiles/path"
 
 # env
-source ~/.mydotfiles/env
+source_if_readable "$HOME/.mydotfiles/env"
 
 # starship
-source ~/.mydotfiles/starship
+source_if_readable "$HOME/.mydotfiles/starship"
 
 # zellij
-source ~/.mydotfiles/zellij
+source_if_readable "$HOME/.mydotfiles/zellij"

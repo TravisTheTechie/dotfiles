@@ -1,3 +1,5 @@
+# Scratchpad install notes (not sourced)
+
 # SSH key
 ssh-keygen -t ed25519 -C "travis@legomaster.net"
 # homebrew
@@ -18,3 +20,5 @@ starship preset nerd-font-symbols -o ~/.config/starship.toml
 brew install lazygit
 # install zellij
 bash <(curl -L https://zellij.dev/launch)
+# neovim
+brew install neovim
