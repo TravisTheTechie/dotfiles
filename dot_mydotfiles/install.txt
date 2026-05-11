@@ -1,24 +1,17 @@
-# Scratchpad install notes (not sourced)
+# New machine bootstrap notes
 
+# 1. Install chezmoi
+#    brew install chezmoi
+#    or: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply TravisTheTechie
+#
+# 2. Initialize and apply this repo
+#    chezmoi init --apply TravisTheTechie
+#
+# The repo now contains:
+# - managed config for nvim, zellij, VS Code, and Terminal theme files
+# - a one-time macOS install script for brew packages, fonts, oh-my-zsh, nvm, and the VS Code theme
+# - an onchange macOS script that imports the TokyoNight Terminal.app profile and sets the font to Commit Mono
+#
+# Manual first-run step that still usually makes sense:
 # SSH key
-ssh-keygen -t ed25519 -C "travis@legomaster.net"
-# homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# include
-echo "source ~/.mydotfiles/all" >> ~/.zshrc
-# homebrew's nerd font
-brew tap homebrew/cask-fonts
-brew install --cask font-commit-mono-nerd-font
-# install starship; requires the font above
-brew install starship
-starship preset nerd-font-symbols -o ~/.config/starship.toml
-# install lazygit
-brew install lazygit
-# install zellij
-bash <(curl -L https://zellij.dev/launch)
-# neovim
-brew install neovim
+#   ssh-keygen -t ed25519 -C "travis@legomaster.net"

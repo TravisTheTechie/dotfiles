@@ -1,0 +1,14 @@
+{
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "env": {
+    "OPENAI_BASE_URL": "https://proxy-shopify-ai.local.shop.dev"
+  },
+  "git.openRepositoryInParentFolders": "always",
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "files.autoSave": "onFocusChange",
+  "python.analysis.typeCheckingMode": "standard",
+  "claudeCode.preferredLocation": "panel",
+  "workbench.colorTheme": "Tokyo Night",
+  "editor.fontFamily": "'CommitMono Nerd Font Mono', 'CommitMono Nerd Font', monospace",
+  "terminal.integrated.fontFamily": "CommitMono Nerd Font Mono"
+}

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ "$(uname -s)" != "Darwin" ]]; then
+  exit 0
+fi
+
+THEME_FILE="$HOME/.config/terminal/TokyoNight Night.terminal"
+if [[ ! -f "$THEME_FILE" ]]; then
+  exit 0
+fi
+
+open -a Terminal "$THEME_FILE"
+sleep 2
+
+defaults write com.apple.Terminal 'Default Window Settings' -string 'TokyoNight Night'
+defaults write com.apple.Terminal 'Startup Window Settings' -string 'TokyoNight Night'
+
+osascript <<'APPLESCRIPT'
+tell application "Terminal"
+  set default settings to settings set "TokyoNight Night"
+  set startup settings to settings set "TokyoNight Night"
+  set font name of settings set "TokyoNight Night" to "CommitMono Nerd Font Mono"
+  set font size of settings set "TokyoNight Night" to 11
+
+  if (count of windows) > 0 then
+    try
+      set current settings of selected tab of front window to settings set "TokyoNight Night"
+    end try
+  end if
+end tell
+APPLESCRIPT
