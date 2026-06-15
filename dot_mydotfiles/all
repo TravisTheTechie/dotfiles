@@ -2,9 +2,6 @@ source_if_readable() {
   [ -r "$1" ] && source "$1"
 }
 
-# omz first
-source_if_readable "$HOME/.mydotfiles/omz"
-
 # tools
 source_if_readable "$HOME/.mydotfiles/nvm"
 source_if_readable "$HOME/.mydotfiles/neovim"
@@ -15,6 +12,9 @@ source_if_readable "$HOME/.mydotfiles/path"
 
 # env
 source_if_readable "$HOME/.mydotfiles/env"
+
+# zsh
+source_if_readable "$HOME/.mydotfiles/zsh"
 
 # starship
 source_if_readable "$HOME/.mydotfiles/starship"

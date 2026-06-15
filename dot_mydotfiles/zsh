@@ -1,0 +1,6 @@
+# Lightweight interactive zsh setup that does not depend on Oh My Zsh.
+
+if [ -n "${ZSH_VERSION:-}" ] && [[ -o interactive ]]; then
+  autoload -Uz compinit
+  compinit -i
+fi

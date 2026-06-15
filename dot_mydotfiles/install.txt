@@ -9,7 +9,7 @@
 #
 # The repo now contains:
 # - managed config for nvim, zellij, VS Code, and Terminal theme files
-# - a one-time macOS install script for brew packages, fonts, oh-my-zsh, nvm, and the VS Code theme
+# - a one-time macOS install script for brew packages, fonts, nvm, and the VS Code theme
 # - an onchange macOS script that imports the TokyoNight Terminal.app profile and sets the font to Commit Mono
 #
 # Manual first-run step that still usually makes sense:
