@@ -3,4 +3,14 @@
 if [ -n "${ZSH_VERSION:-}" ] && [[ -o interactive ]]; then
   autoload -Uz compinit
   compinit -i
+
+  # Use emacs-style line editing explicitly now that Oh My Zsh is not loaded.
+  bindkey -e
+
+  # Keep arrow-key history navigation available in emacs mode.
+  zmodload zsh/terminfo 2>/dev/null
+  [[ -n "${terminfo[kcuu1]:-}" ]] && bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-history
+  [[ -n "${terminfo[kcud1]:-}" ]] && bindkey -M emacs "${terminfo[kcud1]}" down-line-or-history
+  bindkey -M emacs '^[[A' up-line-or-history
+  bindkey -M emacs '^[[B' down-line-or-history
 fi
